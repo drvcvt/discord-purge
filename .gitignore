@@ -1,4 +1,3 @@
 *.exe
 *.exe~
-go.sum
 .omc/
