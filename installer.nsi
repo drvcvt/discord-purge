@@ -27,8 +27,6 @@ Section "Install"
     CreateShortcut "$SMPROGRAMS\discord-purge\discord-purge.lnk" "$INSTDIR\purge.exe"
     CreateShortcut "$SMPROGRAMS\discord-purge\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 
-    ; Add to PATH
-    EnVar::AddValue "PATH" "$INSTDIR"
 SectionEnd
 
 Section "Uninstall"
@@ -39,6 +37,4 @@ Section "Uninstall"
     Delete "$SMPROGRAMS\discord-purge\discord-purge.lnk"
     Delete "$SMPROGRAMS\discord-purge\Uninstall.lnk"
     RMDir "$SMPROGRAMS\discord-purge"
-
-    EnVar::DeleteValue "PATH" "$INSTDIR"
 SectionEnd
