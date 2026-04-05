@@ -27,7 +27,7 @@ Requires Go 1.22+.
 ```bash
 git clone https://github.com/drvcvt/discord-purge.git
 cd discord-purge
-go build -o purge.exe .
+go build -o purge.exe ./src/
 ```
 
 ## Usage
