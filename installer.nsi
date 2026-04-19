@@ -19,6 +19,10 @@ SetCompressor /SOLID lzma
 !insertmacro MUI_LANGUAGE "English"
 
 Section "Install"
+    ; Kill any running daemon before overwriting files, otherwise the copy
+    ; will fail silently or lock the exe. Best-effort, ignore errors.
+    ExecWait 'taskkill /F /IM purge.exe'
+
     SetOutPath "$INSTDIR"
     File "purge.exe"
     File "installer-extras\daemon.vbs"
